@@ -15,21 +15,18 @@ export default function Index(){
     const [name, setName] = useState("")
 
     function handleNavigate(){
-        router.navigate("/home")
+        router.navigate("/home", { state: { name } })
     }
 
     return(
         <View style={styles.container}>
-            <Text style= {styles.title}>Olá, {name}</Text>
+            <Text style={styles.title}>Home</Text>
+            
 
             <Input  onChangeText={setName}/>
 
 
             <Button title="Continuar" onPress={handleNavigate}/>
-            
-
-
-
 
         </View>
     )

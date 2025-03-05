@@ -2,14 +2,18 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { Button } from '../components/button';
-import { router } from 'expo-router';
+import { router, useRouter, useLocalSearchParams } from 'expo-router';
+import { Header } from '../components/header/Header';
 
 export default function Home(){
+    const { name } = useLocalSearchParams();
 
     
     return(
         <View style={styles.container}>
-            <Text style={styles.title}>Home</Text>
+        <Header title='Header'></Header>
+         <Text style= {styles.title}>Olá, {name}</Text>
+            
             <Button title="Voltar" onPress={() => router.back()}/>
         </View>
     )
