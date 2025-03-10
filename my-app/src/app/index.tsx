@@ -15,7 +15,7 @@ export default function Index(){
     const [name, setName] = useState("")
 
     function handleNavigate(){
-        router.navigate("/home", { state: { name } })
+        router.navigate("")
     }
 
     return(
